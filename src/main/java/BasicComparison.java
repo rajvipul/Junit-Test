@@ -1,5 +1,5 @@
 
-public class Basic {
+public class BasicComparison {
     public static int compare(final int a, final int b) {
         if (a > b) {
             return 1;
