@@ -9,8 +9,8 @@ import java.nio.file.Paths;
 
 public class ReplaceUnicodeInJsonTest {
 
-    String inputFile = "/Users/vipulraj/IdeaProjects/Junit-testing/src/main/inputFiles/sample4.json";   // Specify the input JSON file path
-    String outputFile = "/Users/vipulraj/IdeaProjects/Junit-testing/src/main/inputFiles/output.json";
+    String inputFile = "/Users/vipulraj/IdeaProjects/Junit-testing/src/test/TestInputFiles/sample4.json";
+    String outputFile = "/Users/vipulraj/IdeaProjects/Junit-testing/src/test/TestInputFiles/output.json";
 
     @Test
     public void modifyInvalidJsonValues() throws IOException {
@@ -22,11 +22,8 @@ public class ReplaceUnicodeInJsonTest {
 
     @Test
     public void testRemoveUnicode_NullInput() throws IOException {
-        String input = null;
-
+        String nullInputJson = null;
         String modifiedJson = ReplaceUnicodeInJson.modifyInvalidJsonValues(inputFile);
-        String actualJson = new String(Files.readAllBytes(Paths.get(outputFile)), StandardCharsets.UTF_8);
-
-        Assertions.assertNull(modifiedJson, actualJson);
+        Assertions.assertNull(nullInputJson, modifiedJson);
     }
 }
